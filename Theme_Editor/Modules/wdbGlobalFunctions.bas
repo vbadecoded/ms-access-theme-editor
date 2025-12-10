@@ -1,8 +1,6 @@
 Option Compare Database
 Option Explicit
 
-Public bClone As Boolean
-
 Declare PtrSafe Sub ChooseColor Lib "msaccess.exe" Alias "#53" (ByVal hwnd As LongPtr, rgb As Long)
 
 Public Function setTheme(setForm As Form)
