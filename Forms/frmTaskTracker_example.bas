@@ -13,7 +13,7 @@ DoCmd.RunCommand acCmdFilterMenu
 
 Exit Function
 Err_Handler:
-    Call handleError(Me.name, "filterIt", Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, "filterIt", Err.DESCRIPTION, Err.Number)
 End Function
 
 Private Sub Form_Load()
@@ -29,7 +29,7 @@ Me.OrderByOn = True
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, "Form_Load", Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, "Form_Load", Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub newTask_Click()
@@ -39,7 +39,7 @@ MsgBox "No sample form here, just a sample button to show an 'action button'"
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub openDetails_Click()
@@ -49,7 +49,7 @@ DoCmd.OpenForm "frmTaskDetails_example", , , "recordId = " & Me.recordId
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
 
 Public Sub refresh_Click()
@@ -59,5 +59,5 @@ Me.Requery
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub

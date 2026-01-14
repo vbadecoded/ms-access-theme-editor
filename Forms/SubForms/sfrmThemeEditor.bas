@@ -31,6 +31,16 @@ End If
 
 End Sub
 
+Private Sub Form_Load()
+On Error GoTo Err_Handler
+
+Call setTheme(Me)
+    
+Exit Sub
+Err_Handler:
+    Call handleError(Me.Name, "Form_Load", Err.DESCRIPTION, Err.Number)
+End Sub
+
 Private Sub themeName_Click()
 On Error GoTo Err_Handler
 
@@ -39,6 +49,7 @@ Dim i As Integer
 
 TempVars.Add "themePrimary", Me.primaryColor.Value
 TempVars.Add "themeSecondary", Me.secondaryColor.Value
+TempVars.Add "themeAccent", Me.accentColor.Value
 
 If Me.darkMode Then
     TempVars.Add "themeMode", "Dark"
@@ -58,7 +69,7 @@ Dim obj
 
 For Each obj In Application.CurrentProject.AllForms
     If obj.IsLoaded = False Then GoTo nextOne
-    Set f = forms(obj.name)
+    Set f = forms(obj.Name)
     Call setTheme(f)
     For Each sForm In f.Controls
         If sForm.ControlType = acSubform Then
@@ -72,5 +83,5 @@ Next obj
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub

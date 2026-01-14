@@ -12,7 +12,7 @@ Me.Status = 99
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub closeTask_Click()
@@ -23,7 +23,7 @@ Me.Completed_Date = date
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub Form_Load()
@@ -33,7 +33,7 @@ Call setTheme(Me)
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, "Form_Load", Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, "Form_Load", Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub refresh_Click()
@@ -43,7 +43,7 @@ Me.Requery
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
 
 Private Sub submitTask_Click()
@@ -53,5 +53,5 @@ Me.Status = 3
 
 Exit Sub
 Err_Handler:
-    Call handleError(Me.name, Me.ActiveControl.name, Err.DESCRIPTION, Err.Number)
+    Call handleError(Me.Name, Me.ActiveControl.Name, Err.DESCRIPTION, Err.Number)
 End Sub
